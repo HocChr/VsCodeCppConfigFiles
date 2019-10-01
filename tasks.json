@@ -8,10 +8,27 @@
                 "cwd": "${workspaceRoot}/build"
             },
             "command": "CMake",
-            "args": [ "${workspaceRoot}"
+            "args": [
+                "${workspaceRoot}"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "cpp.exe build active file",
+            "command": "C:\\Qt\\Qt5.12.2\\Tools\\mingw730_64\\bin\\cpp.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Qt\\Qt5.12.2\\Tools\\mingw730_64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
             ]
         }
-        
     ],
     "cmake.cmakePath": "C:\\Program Files\\CMake\\bin\\cmake.exe",
     "cmake.configureOnOpen": true,
@@ -20,6 +37,7 @@
     "cmake.buildDirectory": "${workspaceRoot}\\_Builds\\${buildType}",
     "cmake.configureArgs": [
         "-DCMAKE_BUILD_TYPE:STRING=${buildType}",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
     ],
 
     "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
